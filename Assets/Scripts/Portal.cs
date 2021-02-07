@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class Portal : MonoBehaviour {
    [Header("Main Settings")] public Portal linkedPortal;
@@ -10,14 +12,12 @@ public class Portal : MonoBehaviour {
 
    // Private variables
    RenderTexture viewTexture;
-   Camera portalCam;
-   Camera playerCam;
+   public Camera portalCam;
+   public Camera playerCam;
    Material firstRecursionMat;
    MeshFilter screenMeshFilter;
 
    void Start() {
-      playerCam = Camera.main;
-      portalCam = GetComponentInChildren<Camera>();
       portalCam.enabled = false;
       screenMeshFilter = screen.GetComponent<MeshFilter>();
       screen.material.SetInt("displayMask", 1);
@@ -25,7 +25,7 @@ public class Portal : MonoBehaviour {
 
    // Manually render the camera attached to this portal
    // Called after PrePortalRender, and before PostPortalRender
-   public void Render() {
+   public void Render(ScriptableRenderContext context) {
       // Skip rendering the view from this portal if player is not looking at the linked portal
       if (!CameraUtility.VisibleFromCamera(linkedPortal.screen, playerCam)) {
          return;
@@ -61,13 +61,14 @@ public class Portal : MonoBehaviour {
       }
 
       // Hide screen so that camera can see through portal
-      screen.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+      screen.shadowCastingMode = ShadowCastingMode.ShadowsOnly;
       linkedPortal.screen.material.SetInt("displayMask", 0);
 
       for (int i = startIndex; i < recursionLimit; i++) {
          portalCam.transform.SetPositionAndRotation(renderPositions[i], renderRotations[i]);
          SetNearClipPlane();
-         portalCam.Render();
+         UniversalRenderPipeline.RenderSingleCamera(context, portalCam);
+         // portalCam.Render();
 
          if (i == startIndex) {
             linkedPortal.screen.material.SetInt("displayMask", 1);
@@ -75,7 +76,7 @@ public class Portal : MonoBehaviour {
       }
 
       // Unhide objects hidden at start of render
-      screen.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+      screen.shadowCastingMode = ShadowCastingMode.On;
    }
 
    // Called once all portals have been rendered, but before the player camera renders
