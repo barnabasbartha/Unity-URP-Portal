@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "Unlit/ScreenCutoutShader"
+﻿Shader "Unlit/ScreenCutoutShader"
 {
     Properties
     {
@@ -13,7 +11,8 @@ Shader "Unlit/ScreenCutoutShader"
             "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent"
         }
         Lighting Off
-        Cull Back
+        // Cull Back
+        Cull Off
         ZWrite On
         ZTest Less
 
