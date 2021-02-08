@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public static class CameraUtility {
-   static readonly Vector3[] cubeCornerOffsets = {
+   static readonly Vector3[] CubeCornerOffsets = {
       new Vector3(1, 1, 1),
       new Vector3(-1, 1, 1),
       new Vector3(-1, -1, 1),
@@ -21,35 +21,27 @@ public static class CameraUtility {
    public static bool BoundsOverlap(MeshFilter nearObject, MeshFilter farObject, Camera camera) {
       var near = GetScreenRectFromBounds(nearObject, camera);
       var far = GetScreenRectFromBounds(farObject, camera);
-
       // ensure far object is indeed further away than near object
-      if (far.zMax > near.zMin) {
-         // Doesn't overlap on x axis
-         if (far.xMax < near.xMin || far.xMin > near.xMax) {
-            return false;
-         }
+      if (!(far.zMax > near.zMin)) return false;
 
-         // Doesn't overlap on y axis
-         if (far.yMax < near.yMin || far.yMin > near.yMax) {
-            return false;
-         }
-
-         // Overlaps
-         return true;
+      // Doesn't overlap on x axis
+      if (far.xMax < near.xMin || far.xMin > near.xMax) {
+         return false;
       }
 
-      return false;
+      // Doesn't overlap on y axis
+      return !(far.yMax < near.yMin) && !(far.yMin > near.yMax);
    }
 
    // With thanks to http://www.turiyaware.com/a-solution-to-unitys-camera-worldtoscreenpoint-causing-ui-elements-to-display-when-object-is-behind-the-camera/
-   public static MinMax3D GetScreenRectFromBounds(MeshFilter renderer, Camera mainCamera) {
+   private static MinMax3D GetScreenRectFromBounds(MeshFilter renderer, Camera mainCamera) {
       MinMax3D minMax = new MinMax3D(float.MaxValue, float.MinValue);
 
       var localBounds = renderer.sharedMesh.bounds;
       bool anyPointIsInFrontOfCamera = false;
 
       for (int i = 0; i < 8; i++) {
-         Vector3 localSpaceCorner = localBounds.center + Vector3.Scale(localBounds.extents, cubeCornerOffsets[i]);
+         Vector3 localSpaceCorner = localBounds.center + Vector3.Scale(localBounds.extents, CubeCornerOffsets[i]);
          Vector3 worldSpaceCorner = renderer.transform.TransformPoint(localSpaceCorner);
          Vector3 viewportSpaceCorner = mainCamera.WorldToViewportPoint(worldSpaceCorner);
 
@@ -68,14 +60,10 @@ public static class CameraUtility {
       }
 
       // All points are behind camera so just return empty bounds
-      if (!anyPointIsInFrontOfCamera) {
-         return new MinMax3D();
-      }
-
-      return minMax;
+      return !anyPointIsInFrontOfCamera ? new MinMax3D() : minMax;
    }
 
-   public struct MinMax3D {
+   private struct MinMax3D {
       public float xMin;
       public float xMax;
       public float yMin;

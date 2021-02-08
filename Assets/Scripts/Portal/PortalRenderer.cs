@@ -2,20 +2,20 @@
 using UnityEngine.Rendering;
 
 public class PortalRenderer : MonoBehaviour {
-   Portal[] portals;
+   private Portal[] portals;
 
-   void Awake() {
+   private void Awake() {
       portals = FindObjectsOfType<Portal>();
       RenderPipelineManager.beginFrameRendering += RenderPortals;
    }
 
    private void RenderPortals(ScriptableRenderContext context, Camera[] camera) {
-      for (int i = 0; i < portals.Length; i++) {
-         portals[i].Render(context);
+      foreach (var portal in portals) {
+         portal.Render(context);
       }
 
-      for (int i = 0; i < portals.Length; i++) {
-         portals[i].PostPortalRender();
+      foreach (var portal in portals) {
+         portal.PostPortalRender();
       }
    }
 
