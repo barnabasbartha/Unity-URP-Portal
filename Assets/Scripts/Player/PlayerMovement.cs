@@ -1,12 +1,13 @@
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
+   private static readonly float GRAVITY_MULTIPLIER = 3.0f;
    public event OnTeleportRotationDelegate OnTeleportRotation;
 
    public delegate void OnTeleportRotationDelegate(float deltaRotY);
 
    [SerializeField] public float movementSpeed = 5f;
-   [SerializeField] public float gravity = -9.81f * 2;
+   [SerializeField] public float gravity = -9.81f;
    [SerializeField] public float jumpHeight = 3f;
 
    [SerializeField] public Transform groundCheck;
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
       controller.Move(move);
 
       // Gravity
-      velocity.y += gravity * Time.deltaTime;
+      velocity.y += gravity * Time.deltaTime * GRAVITY_MULTIPLIER;
       controller.Move(velocity * Time.deltaTime);
    }
 
@@ -70,10 +71,8 @@ public class PlayerMovement : MonoBehaviour {
       Portal targetPortal = portal.linkedPortal;
       Transform targetPortalTransform = targetPortal.GetComponent<Transform>();
 
-      // Calculate relative delta position based on portal position, raycastHitPoint and targetPortalPosition
       Vector3 relativeDeltaPosition = raycastHitPoint - portalTransform.position;
 
-      // Rotate relativeDeltaPosition
       var portalRotY = portalTransform.rotation.eulerAngles.y;
       var targetPortalRotY = targetPortalTransform.rotation.eulerAngles.y;
 
@@ -90,7 +89,6 @@ public class PlayerMovement : MonoBehaviour {
                                       rotatedMoveLeft;
       controller.enabled = true;
       velocity = deltaRot * velocity;
-      // velocity = new Vector3();
 
       OnTeleportRotation?.Invoke(deltaRotY);
    }
