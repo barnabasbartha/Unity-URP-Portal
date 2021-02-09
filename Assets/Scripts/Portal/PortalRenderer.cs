@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 public class PortalRenderer : MonoBehaviour {
    private Portal[] portals;
 
-   private void Awake() {
+   private void Start() {
       portals = FindObjectsOfType<Portal>();
       RenderPipelineManager.beginFrameRendering += RenderPortals;
    }

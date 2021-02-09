@@ -83,6 +83,7 @@ MonoBehaviour:
   jumpHeight: 2
   groundCheck: {fileID: 2453055901973989117}
   groundDistance: 0.4
+  playerCamera: {fileID: 0}
 --- !u!143 &2453055902015034903
 CharacterController:
   m_ObjectHideFlags: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   jumpHeight: 3
   groundCheck: {fileID: 2453055901973989117}
   groundDistance: 0.4
+  playerCamera: {fileID: 0}
 --- !u!1 &2453055902294141819
 GameObject:
   m_ObjectHideFlags: 0

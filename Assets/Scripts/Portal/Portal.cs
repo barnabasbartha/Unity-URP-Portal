@@ -19,7 +19,7 @@ public class Portal : MonoBehaviour {
    private static readonly int DisplayMask = Shader.PropertyToID("displayMask");
    private static readonly int MainTex = Shader.PropertyToID("_MainTex");
 
-   void Start() {
+   private void Start() {
       portalCam.enabled = false;
       screenMeshFilter = screen.GetComponent<MeshFilter>();
       screen.material.SetInt(DisplayMask, 1);
