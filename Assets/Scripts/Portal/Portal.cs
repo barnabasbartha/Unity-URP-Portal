@@ -78,7 +78,7 @@ public class Portal : MonoBehaviour {
       }
 
       // Unhide objects hidden at start of render
-      screen.shadowCastingMode = ShadowCastingMode.On;
+      screen.shadowCastingMode = ShadowCastingMode.Off;
    }
 
    // Called once all portals have been rendered, but before the player camera renders
