@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-   private static readonly float GRAVITY_MULTIPLIER = 3.0f;
+   private static readonly float GRAVITY_MULTIPLIER = 8.0f;
    public event OnTeleportRotationDelegate OnTeleportRotation;
 
    public delegate void OnTeleportRotationDelegate(float deltaRotY);
