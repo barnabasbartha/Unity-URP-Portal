@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_Portal
+  m_Name: Portal
   m_Shader: {fileID: 4800000, guid: 038d36778dc93104d8516a8e9d0ca01b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
