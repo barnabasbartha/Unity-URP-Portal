@@ -169,10 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   mode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
 --- !u!114 &11400000
 MonoBehaviour:
@@ -261,10 +261,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   contrast:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 0
     min: -100
     max: 100
   colorFilter:
