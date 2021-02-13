@@ -44,6 +44,12 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.postprocessing": {
+      "version": "3.0.2",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.render-pipelines.core": {
       "version": "11.0.0",
       "depth": 1,

@@ -1,6 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8659587349227844950
+--- !u!114 &-9218512372186199013
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  postExposure:
+    m_OverrideState: 1
+    m_Value: 0.5
+  contrast:
+    m_OverrideState: 1
+    m_Value: 0
+    min: -100
+    max: 100
+  colorFilter:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 1
+    showAlpha: 0
+    showEyeDropper: 1
+  hueShift:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -180
+    max: 180
+  saturation:
+    m_OverrideState: 1
+    m_Value: 0
+    min: -100
+    max: 100
+--- !u!114 &-8926120596662738871
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
   m_Name: ChannelMixer
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   redOutRedIn:
     m_OverrideState: 0
@@ -26,7 +64,7 @@ MonoBehaviour:
     max: 200
   redOutBlueIn:
     m_OverrideState: 1
-    m_Value: -10
+    m_Value: 0
     min: -200
     max: 200
   greenOutRedIn:
@@ -71,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
@@ -121,42 +159,6 @@ MonoBehaviour:
     m_Value: 0
     min: -180
     max: 180
---- !u!114 &-1150370744505848563
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
-  m_Name: Vignette
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  color:
-    m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
-  center:
-    m_OverrideState: 0
-    m_Value: {x: 0.5, y: 0.5}
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.258
-    min: 0
-    max: 1
-  smoothness:
-    m_OverrideState: 0
-    m_Value: 0.2
-    min: 0.01
-    max: 1
-  rounded:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!114 &-826264858813738827
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -184,16 +186,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Global Volume Profile
+  m_Name: Local Volume Profile
   m_EditorClassIdentifier: 
   components:
   - {fileID: -826264858813738827}
-  - {fileID: 8948785646009560495}
-  - {fileID: -8659587349227844950}
+  - {fileID: -9218512372186199013}
+  - {fileID: -8926120596662738871}
   - {fileID: -4293166272581863634}
-  - {fileID: 5743349323214351451}
-  - {fileID: -1150370744505848563}
---- !u!114 &5743349323214351451
+  - {fileID: 4671689055001656901}
+  - {fileID: 6452223048461677483}
+--- !u!114 &4671689055001656901
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,15 +207,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 0
     min: 0
   scatter:
     m_OverrideState: 0
@@ -245,7 +247,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
     min: 0
---- !u!114 &8948785646009560495
+--- !u!114 &6452223048461677483
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,32 +256,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
-  m_Name: ColorAdjustments
+  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
+  m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
-  postExposure:
-    m_OverrideState: 1
-    m_Value: 1
-  contrast:
-    m_OverrideState: 1
-    m_Value: 5
-    min: -100
-    max: 100
-  colorFilter:
+  color:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
-    hdr: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
     showAlpha: 0
     showEyeDropper: 1
-  hueShift:
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  intensity:
     m_OverrideState: 0
     m_Value: 0
-    min: -180
-    max: 180
-  saturation:
-    m_OverrideState: 1
-    m_Value: 5
-    min: -100
-    max: 100
+    min: 0
+    max: 1
+  smoothness:
+    m_OverrideState: 0
+    m_Value: 0.2
+    min: 0.01
+    max: 1
+  rounded:
+    m_OverrideState: 0
+    m_Value: 0
