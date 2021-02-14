@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1857183032
 Transform:
@@ -119,6 +119,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_broken2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e796b12cb17b34db21de070ed08307, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 978712828781615618, guid: 89e796b12cb17b34db21de070ed08307, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191467879784329145, guid: 89e796b12cb17b34db21de070ed08307, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3565673920452325530, guid: 89e796b12cb17b34db21de070ed08307, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -127,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a65406eb67d5fd44bd3e0181b51d2d6, type: 2}
+    - target: {fileID: 6027136008259318812, guid: 89e796b12cb17b34db21de070ed08307, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e796b12cb17b34db21de070ed08307, type: 3}
 --- !u!4 &3648715592168970175 stripped

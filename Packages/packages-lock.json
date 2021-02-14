@@ -125,6 +125,14 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.unity.visualeffectgraph": {
+      "version": "11.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "11.0.0"
+      }
+    },
     "com.unity.visualscripting": {
       "version": "1.5.1-pre.3",
       "depth": 0,

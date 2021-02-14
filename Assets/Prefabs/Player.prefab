@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2453055901973989117
 Transform:
@@ -47,7 +47,7 @@ GameObject:
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2453055902015034900
 Transform:
@@ -83,7 +83,6 @@ MonoBehaviour:
   jumpHeight: 2
   groundCheck: {fileID: 2453055901973989117}
   groundDistance: 0.4
-  playerCamera: {fileID: 0}
 --- !u!143 &2453055902015034903
 CharacterController:
   m_ObjectHideFlags: 0
@@ -119,7 +118,6 @@ MonoBehaviour:
   jumpHeight: 3
   groundCheck: {fileID: 2453055901973989117}
   groundDistance: 0.4
-  playerCamera: {fileID: 0}
 --- !u!1 &2453055902294141819
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +138,7 @@ GameObject:
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2453055902294141815
 Transform:
@@ -293,7 +291,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2453055903352973412
 Transform:
