@@ -417,15 +417,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7544772915496018118, guid: cc3d07f4b2a352840b395a60d234677e, type: 3}
       propertyPath: m_Intensity
-      value: 0.3
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7544772915496018118, guid: cc3d07f4b2a352840b395a60d234677e, type: 3}
       propertyPath: m_Lightmapping
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7544772915496018118, guid: cc3d07f4b2a352840b395a60d234677e, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8335890140433118198, guid: cc3d07f4b2a352840b395a60d234677e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.013
+      value: -3.31
       objectReference: {fileID: 0}
     - target: {fileID: 8757688378930744556, guid: cc3d07f4b2a352840b395a60d234677e, type: 3}
       propertyPath: m_LocalPosition.y
